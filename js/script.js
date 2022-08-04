@@ -17,6 +17,7 @@ class Slider{
 		this.images = this.root.querySelectorAll('.photos img');
 		this.i = 0;
 		this.animated = false;
+		this.duration = 500
 
 		this.btnPrev.addEventListener('click', () => { this.prev() });
 		this.btnNext.addEventListener('click', () => { this.next() });
@@ -53,10 +54,10 @@ class Slider{
 		this.animated = true;
 
 		showImg.classList.add('showed');
-		showImg.animate(isNext ? this.rightAnim : this.leftAnim, {duration:500});
+		showImg.animate(isNext ? this.rightAnim : this.leftAnim, {duration: this.duration});
 
 		let animeHide = imgHide.animate(isNext ? this.leftAnim : this.rightAnim, {
-			duration:500, 
+			duration: this.duration, 
 			direction: 'reverse'
 		});
 		
