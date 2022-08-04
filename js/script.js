@@ -37,7 +37,7 @@ class Slider{
 		if(!this.animated){
 			let imgHide = this.images[this.i];
 			this.i = this.i > 0 ? this.i - 1 : this.images.length - 1;
-			this.toogleSlides(imgHide, this.images[this.i], isNext = false);
+			this.toogleSlides(imgHide, this.images[this.i], false);
 		}
 	}
 
@@ -67,7 +67,7 @@ class Slider{
 
 		showImg.classList.add('showed');
 		showImg.animate(isNext ? this.rightAnim : this.leftAnim, {duration:500});
-
+		// showimgHide.animate(isNext ? this.rightAnim : this.leftAnim, {duration:500});
 
 		imgHide.classList.remove('showed');
 	}
