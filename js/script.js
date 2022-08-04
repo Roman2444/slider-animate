@@ -50,25 +50,20 @@ class Slider{
 	}
 
 	toogleSlides(imgHide, showImg, isNext = true){
-		// this.animated = true;
-		// let animate 
-		// let animate2
-		// if (this.vector === 'r') { 
-		// 	animate = imgHide.animate([{ transform: 'translateX(100%)' }], 500);
-		// 	// animate2 = showImg.animate([{ transform: 'translateX(0)' }], 500);
-		// } else if (this.vector === 'l') { 
-		// 	animate = imgHide.animate([{ transform: 'translateX(-100%)' }], 500);
-		// }
 
-		// animate.addEventListener('finish', () => {
-		// 	imgHide.classList.remove('showed');
-		// 	this.animated = false;
-		// });
+		this.animated = true;
 
 		showImg.classList.add('showed');
 		showImg.animate(isNext ? this.rightAnim : this.leftAnim, {duration:500});
-		// showimgHide.animate(isNext ? this.rightAnim : this.leftAnim, {duration:500});
 
-		imgHide.classList.remove('showed');
+		let animeHide = imgHide.animate(isNext ? this.leftAnim : this.rightAnim, {
+			duration:500, 
+			direction: 'reverse'
+		});
+		
+		animeHide.addEventListener('finish', () => {
+			imgHide.classList.remove('showed');
+			this.animated = false ;	
+		})
 	}
 }
