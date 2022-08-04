@@ -22,15 +22,14 @@ class Slider{
 		this.btnNext.addEventListener('click', () => { this.next() });
 
 		this.leftAnim = [
-			{ transform: 'translateX(-100%)' },
-			{ transform: 'translateX(0)' }
+			{ transform: 'translateX(-100%)', opacity: 0 },
+			{ transform: 'translateX(0)', opacity: 1 }
 		];
 
 		this.rightAnim = [
-			{ transform: 'translateX(100%)' },
-			{ transform: 'translateX(0)' }
+			{ transform: 'translateX(100%)', opacity: 0 },
+			{ transform: 'translateX(0)', opacity: 1 }
 		];
-
 	}
 
 	prev(){
