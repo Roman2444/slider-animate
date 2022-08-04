@@ -19,10 +19,10 @@ html, body, ul, li{
 	width: 100%;
 	position: absolute;
 	left: 0;
-	transform: translateX(-100%);
+	transform: translateX(100%);
 }
 
 .gallery .photos img.showed{
-	transition: transform 0.5s linear;
+	/* transition: transform 0.5s linear; */
 	transform: translateX(0);
 }
